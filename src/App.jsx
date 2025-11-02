@@ -1,7 +1,8 @@
+import Navbar from "./Component/Navbar";
 const App = () => {
   return (
-    <div className="bg-[red]">
-      <p>Salam</p>
+    <div className="flex justify-center">
+      <Navbar />
     </div>
   );
 };
