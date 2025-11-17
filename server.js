@@ -29,6 +29,19 @@ app.get("/api/search", async (req, res) => {
     res.status(500).json({ error: "Failed to fetch external data" });
   }
 });
+app.get("/api/character/:id", async (req, res) => {
+  try {
+    const id = req.params.id;
+    const externalUrl = `https://www.giantbomb.com/api/character/${id}/?api_key=${apiKey}&format=json`;
+    const response = await axios.get(externalUrl, {
+      headers: { "User-Agent": "MyGameApp/1.0" },
+    });
+    res.json(response.data);
+  } catch (error) {
+    console.error("Error fetching external API", error);
+    res.status(500).json({ error: "Failed to fetch external data" });
+  }
+});
 
 app.listen(PORT, () => {
   console.log(`Server running on http://localhost:${PORT}`);

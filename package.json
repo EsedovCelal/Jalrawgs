@@ -19,10 +19,9 @@
     "cors": "^2.8.5",
     "express": "^5.1.0",
     "node-fetch": "^3.3.2",
-    "primeicons": "^7.0.0",
-    "primereact": "^10.9.7",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
+    "react-router-dom": "^7.9.6",
     "react-transition-group": "^4.4.5",
     "tailwindcss": "^4.1.16"
   },
