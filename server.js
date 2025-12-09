@@ -1,4 +1,4 @@
-const apiKey = `08eef91c5a865641cc85ae7b771d4002f78ef3cb`;
+const apiKey = `a28fc98e730d4403a657b9b9f174874a`;
 import express from "express";
 import axios from "axios";
 
@@ -18,7 +18,7 @@ app.get("/api/search", async (req, res) => {
   try {
     const query = req.query.query || "";
     const resources = req.query.resources;
-    const externalUrl = `https://www.giantbomb.com/api/search/?api_key=${apiKey}&format=json&query=${encodeURIComponent(
+    const externalUrl = `https://api.rawg.io/api/games?key=${apiKey}&format=json&search=${encodeURIComponent(
       query
     )}&resources=${encodeURIComponent(resources)}`;
     const response = await axios.get(externalUrl, {

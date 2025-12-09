@@ -12,7 +12,7 @@ const Result = ({ isFocused, externalData }) => {
       ) : (
         externalData.map((item, index) => (
           <Link
-            href={`/${item.name.toLowerCase()}/${item.guid}/`}
+            href={`/${item.name.toLowerCase()}/${item.id}/`}
             key={index}
             underline="none"
             color="white"
@@ -20,13 +20,7 @@ const Result = ({ isFocused, externalData }) => {
             onHover={() => setTextColor("orange")}
           >
             <div className="pb-1 flex h-11 items-center bg-[#12151a] border-b border-[grey] p-2 border-1-solid  hover:bg-[#1e2227]">
-              <img
-                className="h-8 w-8 rounded-lg border-[grey] border"
-                src={item.image.icon_url}
-              />
-              <h1 className={`ml-2 hover:text-[orange]`}>{item.name}</h1> -
-              {"  "}
-              <p>{item.resource_type}</p>
+              <h1 className={`ml-2 hover:text-[orange]`}>{item.name}</h1>
             </div>
           </Link>
         ))
